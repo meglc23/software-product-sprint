@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+#main {
+  width: 800px;
+}
+
+.text-pic {
+  width: 62.5%;
+}
+
+.facts {
+  padding-left: 20px;
+  width: 37.5%;
+}

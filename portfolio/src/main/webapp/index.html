@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Chen Li</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media="screen and (min-width: 820px)" href="widescreen.css">
+  <link rel="stylesheet" media="screen and (min-width: 650px) and (max-width: 820px)" href="midscreen.css">
+  <link rel="stylesheet" media="screen and (max-width: 650px)" href="smallscreen.css">
+</head>
+<body>
+  <div id="main">
+    <div id="head">Chen Li</div>
+    <div class="content">
+      <div class="text-pic section">
+        <div class="subhead">Introduction</div>
+        <img src="images/lc.jpeg" alt="profile pic.">
+        <p>
+          This is Chen, a senior Computer Science student at the University of Hong Kong. I'm working on this personal portfolio for the <em>Google Software Product Sprint (SPS)</em>.
+          However, I already have a blog before: <a href="https://meglc23.com">meglc23.com</a>.
+        </p>
+        <p>
+          As usual, I would not build it as a resume (cuz I really don't have projects to put on). For professional stuff, please go to my <a href="https://www.linkedin.com/in/chen-li-2aaa77177/">LinkedIn</a>.
+        </p>
+        <p>
+          My original webpage is lack of a server side and the comment function. Thanks to SPS, I can have one for myself!
+        </p>
+      </div><!--end text-pic section-->
+
+      <div class="facts section">
+        <div class="subhead">Facts about me</div>
+        <div class="single-fact">My Chinese name is exactly the same as an actor, <a href="https://zh.wikipedia.org/wiki/李晨_(演员)">李晨</a>, in China. I've been regarded as a boy all the time.</div>
+        <div class="single-fact">I'm watching <em><a href="https://en.wikipedia.org/wiki/Friends">Friends</a></em> these days. I finished the 10 seasons within a month even if I'm working 997 this summer. My favorite character is Rachel Green.<div>
+        <div class="single-fact last">Not familiar with design, I kind of referenced the <a href="https://www.cmu.edu/brand/brand-guidelines/web.html">CMU Brand</a> when working on this page. I'll go there to pursue my master's degree next year.</div>
+      </div><!--end facts section-->
+    </div><!--end content-->
+
+  </div><!--end main-->
+</body>
 </html>
