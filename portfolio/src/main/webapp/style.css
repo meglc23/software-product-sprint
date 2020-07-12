@@ -10,7 +10,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button, input, select, textarea{
   border: 0;
   color: #666;
   font-family: 'Open Sans', sans-serif;
@@ -46,13 +46,19 @@ p {
   margin-bottom: 15px;
 }
 
+.panel {
+  display: block;
+  float: left;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
 /* ------ head panel ------ */
 #head {
   color: #b00;
   font-family: 'Source Serif Pro', serif;
   font-size: 48px;
   font-weight: 700;
-  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
@@ -61,8 +67,8 @@ p {
   float: left;
 }
 
-/* ------ text-pic subpanel ------ */
-.text-pic {
+/* ------ text-pic section ------ */
+#text-pic {
   width: 100%;
 }
 
@@ -72,8 +78,8 @@ img {
   width: 40%;
 }
 
-/* ------ facts subpanel ------ */
-.single-fact {
+/* ------ facts section ------ */
+.single {
   border-top: 1px solid #e0e0e0;
   font-size: 14px;
   font-weight: 300;
@@ -81,7 +87,53 @@ img {
   padding-top: 10px;
 }
 
-.last {
+#last {
   border-bottom: 1px solid #e0e0e0;
   padding-bottom: 10px;
+}
+
+/* ------ comments panel ------ */
+button, input[type=submit] {
+  -webkit-appearance: button;
+  background-color: rgba(0,0,0,.6);
+  border: 0 none;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid rgba(0,0,0,.35);
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.15em;
+  margin-bottom: 1em;
+  padding: .7em 1em;
+  outline: 0;
+  transition: background-color 0.4s ease;
+}
+
+button, input[type=submit]:hover {
+  background-color: rgba(2, 2, 2, 0.74);
+  transition: background-color 0.4s ease;
+}
+
+input, textarea {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.35);
+  font-size: 1em;
+  margin: .25em 0;
+  outline: none;
+  padding: .35em .5em;
+  transition: background-color 0.4s ease;
+}
+
+.input, textarea:focus {
+  background-color: #e6e6e6;
+  transition: background-color 0.4s ease;
+}
+
+#input-comment {
+  width: 100%;
+}
+
+.comment-item {
+  font-size: 15px;
 }

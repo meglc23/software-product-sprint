@@ -6,11 +6,11 @@
   width: 800px;
 }
 
-.text-pic {
+#text-pic {
   width: 62.5%;
 }
 
-.facts {
+#facts {
   padding-left: 20px;
   width: 37.5%;
 }
