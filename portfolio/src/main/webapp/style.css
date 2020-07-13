@@ -53,6 +53,10 @@ p {
   width: 100%;
 }
 
+.hidden-element {
+  display: none;
+}
+
 /* ------ head panel ------ */
 #head {
   color: #b00;
