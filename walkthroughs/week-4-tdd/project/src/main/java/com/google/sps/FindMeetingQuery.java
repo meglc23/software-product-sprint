@@ -14,10 +14,50 @@
 
 package com.google.sps;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public final class FindMeetingQuery {
   public Collection<TimeRange> query(Collection<Event> events, MeetingRequest request) {
-    throw new UnsupportedOperationException("TODO: Implement this method.");
+    List<TimeRange> resultRange = new ArrayList<>();
+    Collection<String> attendees = request.getAttendees();
+    long duration = request.getDuration();
+    if (duration > TimeRange.END_OF_DAY - TimeRange.START_OF_DAY + 1) return resultRange;
+
+    int[] timeInDay = new int[TimeRange.END_OF_DAY - TimeRange.START_OF_DAY + 2];
+
+    // For each event with any attendees attending the new event, add its start time in
+    // timeInDay by 1, subtract its end time (exclusive) in timeInDay by 1.
+    for (Event e: events) {
+        if(!Collections.disjoint(attendees, e.getAttendees())) {
+            TimeRange curEventTime = e.getWhen();
+            ++timeInDay[curEventTime.start()];
+            --timeInDay[curEventTime.end()];
+        }
+    }
+
+    int start = TimeRange.START_OF_DAY;
+    int end = TimeRange.START_OF_DAY;
+    int occupiedPeople = 0;
+
+    // occupiedPeople is the cumulative value for the timeInDay. Only when occupiedPeople is 0, the
+    // current time is available for everyone.
+    while (start <= TimeRange.END_OF_DAY - (int)duration + 1) {
+        occupiedPeople += timeInDay[end];
+        while (occupiedPeople == 0 && end <= TimeRange.END_OF_DAY) {
+            ++end;
+            if (end > TimeRange.END_OF_DAY) break;
+            occupiedPeople += timeInDay[end];
+        }
+        if (end - start >= (int)duration) {
+            resultRange.add(TimeRange.fromStartEnd(start, end, false));
+        }
+        start = end + 1;
+        end = start;
+    }
+
+    return resultRange;
   }
 }
