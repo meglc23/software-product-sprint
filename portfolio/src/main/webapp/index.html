@@ -44,12 +44,24 @@
       Please leave your message here &#x1F970
       <textarea id="input-comment" name="comment" rows="4" form="commentform"></textarea>
       <form id="commentform" action="/new-comment" method="post">
-        <input class="btn" name="action" type="submit" value="Submit Comment"/> 
+        <input name="action" type="submit" value="Submit Comment"/>
       </form>
     </div><!--end add comments-->
 
     <div class="panel" id="all-comments">
-      <div class="subhead">All Comments</div>
+      <div id="comments-subhead-panel">
+        <div class="subhead">All Comments</div>
+        <div id="select-language">
+          <select id="language">
+            <option value="en">English</option>
+            <option value="zh">Chinese</option>
+            <option value="es">Spanish</option>
+            <option value="hi">Hindi</option>
+            <option value="ar">Arabic</option>
+          </select>
+          <button onclick="requestTranslation();">Translate</button>
+        </div>
+      </div>
       <div id="list-comments"></div>
     </div><!--end all comments-->
   </div><!--end main-->
