@@ -53,3 +53,26 @@ function deleteComment(comment) {
   params.append('id', comment.id);
   fetch('/delete-comment', {method: 'POST', body: params});
 }
+
+/** Request translation of all comments to the language chosen by user. */
+function requestTranslation() {
+  const commentElements = document.getElementsByClassName('comment-item');
+  const languageCode = document.getElementById('language').value;
+  const params = new URLSearchParams();
+  params.append('languageCode', languageCode);
+  params.append('commentLength', commentElements.length);
+
+  for (var i = 0; i < commentElements.length; i++) {
+    params.append(i, commentElements[i].innerText);
+  }
+
+  fetch('/translate', {
+    method: 'POST',
+    body: params
+  }).then(response => response.json())
+  .then((translatedComments) => {
+    for (var i = 0; i < commentElements.length; i++) {
+      commentElements[i].innerText = translatedComments[i];
+    }
+  });
+}

@@ -6,3 +6,13 @@ img {
   padding-top: 10px;
   width: 100%;
 }
+
+#comments-subhead-panel {
+  display: inherit;
+}
+
+#select-language {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

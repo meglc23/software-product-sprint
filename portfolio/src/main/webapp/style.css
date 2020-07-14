@@ -97,6 +97,18 @@ img {
 }
 
 /* ------ comments panel ------ */
+/* ------ comment headline and translation section ------ */
+#comments-subhead-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#language {
+  margin-right: 10px;
+}
+
+/* ------ add comment section ------ */
 button, input[type=submit] {
   -webkit-appearance: button;
   background-color: rgba(0,0,0,.6);
@@ -114,7 +126,7 @@ button, input[type=submit] {
   transition: background-color 0.4s ease;
 }
 
-button, input[type=submit]:hover {
+button:hover, input[type=submit]:hover {
   background-color: rgba(2, 2, 2, 0.74);
   transition: background-color 0.4s ease;
 }
@@ -138,6 +150,7 @@ input, textarea {
   width: 100%;
 }
 
+/* ------ show comments section ------ */
 .comment-item {
   font-size: 15px;
 }
